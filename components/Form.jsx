@@ -22,13 +22,13 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
             placeholder="Write your message here..."
             required
             className="form_textarea"
-            maxLength={500}
+            maxLength={5000}
           /> 
         </label>
 
         <label> 
           <span className=" font-satoshi font-semibold text-base text-gray-700">
-            Tag <span className="font-normal">(idea, sports, recipe, etc.)</span>   
+            Tag <span className="font-normal">(business, sports, recipe, etc.)</span>   
           </span>
         
           <input

@@ -1,8 +1,5 @@
 import NextAuth from "next-auth";
 import GoogleProvider from 'next-auth/providers/google';
-
-
-
 import User from "@models/user";
 import { connectToDB } from '@utils/database';
 
@@ -15,6 +12,8 @@ const handler = NextAuth({
     ],
     callbacks: {
         async session({ session }) {
+            console.log("Session");
+            
             const sessionUser = await User.findOne({
                 email: session.user.email
             })
@@ -24,6 +23,7 @@ const handler = NextAuth({
         },
         async signIn({ profile }) {
             try {
+                console.log("Singin");
                 //serverless
                 await connectToDB();
     
